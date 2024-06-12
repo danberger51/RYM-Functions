@@ -4,18 +4,18 @@ const cosmosInput = input.cosmosDB({
     databaseName: "FilmDatabase",
     containerName: "Movie-Container",
     connection: "CosmosDB",
-    sqlQuery: "Select * from c",
+    qlQuery: "select * from c where c.id = {id}",
 });
 
-app.http("getItems", {
+app.http("getItem", {
     methods: ["GET"],
     authLevel: "anonymous",
     extraInputs: [cosmosInput],
-    route: "show/films",
+    route: "films/{id}",
     handler: async (request, context) => {
-      const items = context.extraInputs.get(cosmosInput);
+      const item = context.extraInputs.get(cosmosInput);
   
-      return { body: JSON.stringify(items), status: 200 };
+      return { body: JSON.stringify(item), status: 200 };
     },
   });
   
