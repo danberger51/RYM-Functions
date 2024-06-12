@@ -12,7 +12,7 @@ const cosmosOutput = output.cosmosDB({
 app.http('addMovie', {
     methods: ['POST'],
     authLevel: 'anonymous',
-    route: 'movies/create',
+    route: 'movies',
     extraOutputs: [cosmosOutput],
     handler: async (request, context) => {
         const data = await request.json();
