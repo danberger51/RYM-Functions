@@ -11,7 +11,7 @@ app.http("getItems", {
     methods: ["GET"],
     authLevel: "anonymous",
     extraInputs: [cosmosInput],
-    route: "films",
+    route: "movies",
     handler: async (request, context) => {
       const items = context.extraInputs.get(cosmosInput);
   
