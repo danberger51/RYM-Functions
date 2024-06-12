@@ -12,7 +12,7 @@ const containerId = "Movie-Container";
 app.http("deleteItem", {
     methods: ["DELETE"],
     authLevel: "anonymous",
-    route: "remove/movies/{id}",
+    route: "movies/{id}",
     handler: async (request, context) => {
         const database = client.database(databaseId);
         const container = database.container(containerId);
