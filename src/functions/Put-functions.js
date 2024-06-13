@@ -4,7 +4,7 @@ const cosmosInput = input.cosmosDB({
     databaseName: "FilmDatabase",
     containerName: "Movie-Container",
     connection: "CosmosDB",
-    qlQuery: "select * from c where c.id = {id}",
+    sqlQuery: "select * from c where c.id = {id}",
     parameters: [
       {
           name: "@filmId",
